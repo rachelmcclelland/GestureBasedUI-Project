@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mBodySourceManager: {fileID: 1698423885}
-  mJointObject: {fileID: 2145150176154657673, guid: d20dc60bc77f8974296cace4152c91ec,
+  mJointObject: {fileID: 4805892498050350813, guid: 73fe63333b04f36448a55961e580fd9d,
     type: 3}
 --- !u!1001 &216125167
 PrefabInstance:

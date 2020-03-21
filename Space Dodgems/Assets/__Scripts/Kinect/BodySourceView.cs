@@ -100,6 +100,6 @@ public class BodySourceView : MonoBehaviour
     
     private static Vector3 GetVector3FromJoint(Joint joint)
     {
-        return new Vector3(joint.Position.X * 10, joint.Position.Y * 10, joint.Position.Z * 10);
+        return new Vector3(joint.Position.X * 10, 1, -10);
     }
 }
