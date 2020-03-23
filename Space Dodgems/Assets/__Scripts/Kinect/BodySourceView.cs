@@ -100,6 +100,22 @@ public class BodySourceView : MonoBehaviour
     
     private static Vector3 GetVector3FromJoint(Joint joint)
     {
-        return new Vector3(joint.Position.X * 10, -4, -10);
+        if(joint.Position.X == 0)
+        {
+            //Vector3 pos = joint.position;
+            return new Vector3(0, -4, -10);
+        }
+        else
+        {
+            return new Vector3(joint.Position.X * 10, -4, -10);
+        }
+    }
+    private void OnTriggeredEnter2D(Collider2D collision)
+    {
+        Debug.Log("hERE");
+        if (!collision.gameObject.CompareTag("Enemy"))
+        return;
+
+        collision.gameObject.SetActive(false);
     }
 }

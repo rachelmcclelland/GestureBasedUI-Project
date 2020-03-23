@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class Boundaries : MonoBehaviour
 {
-    public Camera mainCamera;
-
-    private Vector2 screenBounds;
-    private float objectWidth;
 
     void Start()
     {
-        // define screen bounds
-        screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height,
-                                                             mainCamera.transform.position.z));
-
-        objectWidth = transform.GetComponent<SpriteRenderer>().bounds.extents.x;
-        // objectWidth = gameObject.GetComponent<SpriteRenderer>().bounds.extents.x;
+       
     }
-
-    private void LateUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Vector3 viewPos = transform.position;
+        var LeftSide = collision.GetComponent<PlayerController>(); // hit by player
 
-        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth,
-                                        screenBounds.x - objectWidth);
-        transform.position = viewPos;
+        if (LeftSide)
+        {
+            Debug.Log("Here");
+            //PublishEnemyKilledEvent();
+            //SceneManager.LoadScene("GameOver"); // load game over page
+            Vector3 viewPos = transform.position;
 
+            viewPos.x = Mathf.Clamp(viewPos.x, -4, -10);
+            transform.position = viewPos;
+        }   
 
     }
 }
