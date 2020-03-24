@@ -32,9 +32,10 @@ public class Enemy : MonoBehaviour
 
         if (player)
         {
-            Debug.Log("Here");
+            GameController.health -= 1;
+           // Debug.Log("Here");
             PublishEnemyKilledEvent();
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             //SceneManager.LoadScene("GameOver"); // load game over page
             
         }   
