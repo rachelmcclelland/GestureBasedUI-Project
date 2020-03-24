@@ -67,6 +67,7 @@ public class BodySourceView : MonoBehaviour
                 UpdateBodyObject(body, mBodies[body.TrackingId]);
             }
         }
+
     }
     
     private GameObject CreateBodyObject(ulong id)
@@ -100,22 +101,15 @@ public class BodySourceView : MonoBehaviour
     
     private static Vector3 GetVector3FromJoint(Joint joint)
     {
-        if(joint.Position.X == 0)
+        if(joint.Position.X == -2)
         {
+            Debug.Log("In Here!");
             //Vector3 pos = joint.position;
-            return new Vector3(0, -4, -10);
+            return new Vector3(-2, -4, -10);
         }
         else
         {
             return new Vector3(joint.Position.X * 10, -4, -10);
         }
-    }
-    private void OnTriggeredEnter2D(Collider2D collision)
-    {
-        Debug.Log("hERE");
-        if (!collision.gameObject.CompareTag("Enemy"))
-        return;
-
-        collision.gameObject.SetActive(false);
     }
 }

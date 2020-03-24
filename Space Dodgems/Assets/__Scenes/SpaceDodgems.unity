@@ -5987,6 +5987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8821130411451d343a1488e2a9db134e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
   mBodySourceManager: {fileID: 476164790}
   mJointObject: {fileID: 8993637200034286261, guid: 73fe63333b04f36448a55961e580fd9d,
     type: 3}

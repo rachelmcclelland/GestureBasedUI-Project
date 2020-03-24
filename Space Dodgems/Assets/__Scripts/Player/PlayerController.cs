@@ -22,4 +22,5 @@ public class PlayerController : MonoBehaviour
 
         transform.position = new Vector3(newXPos, transform.position.y, -5);
     }
+    
 }
