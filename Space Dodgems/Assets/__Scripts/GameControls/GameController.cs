@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -53,8 +54,8 @@ public class GameController : MonoBehaviour
         if (health == 0)
         {
             // load game over screen when all lives are lost
-            //SceneManager.LoadScene("GameOver");
-            Time.timeScale = 0;
+            SceneManager.LoadScene("GameOver");
+            //Time.timeScale = 0;
         }
 
     }
