@@ -5988,7 +5988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mBodySourceManager: {fileID: 476164790}
-  mJointObject: {fileID: 268229030216977685, guid: 73fe63333b04f36448a55961e580fd9d,
+  mJointObject: {fileID: 8993637200034286261, guid: 73fe63333b04f36448a55961e580fd9d,
     type: 3}
 --- !u!4 &1757569211
 Transform:
