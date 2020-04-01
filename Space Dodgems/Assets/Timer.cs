@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class FallingBehaviour : MonoBehaviour
+public class Timer : MonoBehaviour
 {
-    // == private fields ==
-    [SerializeField]
-    private float speed;
-
     Scene currentScene;
     string sceneName;
-
-    private Rigidbody2D rb; //rigid body component
+    float timer;
+    public static float timeStart;
 
     // Start is called before the first frame update
     void Start()
@@ -23,22 +20,25 @@ public class FallingBehaviour : MonoBehaviour
 
         // Retrieve the name of this scene.
         sceneName = currentScene.name;
-        
+    }
+
+     void Update()
+    {
+        StopWatchTimer();
+        TimeSpan timeSpan = TimeSpan.FromSeconds(timeStart);
+        timer += Time.deltaTime;
+
         if (sceneName == "SpaceDodgems")
         {
-            speed = 2.0f;
-        }
-        else if (sceneName == "SpaceDodgemsLevel2")
-        {
-            speed = 3.0f;
+            if ((int)timer == 120)
+            {
+                SceneManager.LoadScene("SpaceDodgemsLevel2");
+            }
         }
 
-        rb = GetComponent<Rigidbody2D>();
     }
-
-    private void FixedUpdate()
+    void StopWatchTimer()
     {
-        rb.velocity = Vector2.down * speed;
+        timeStart += Time.deltaTime;
     }
-
 }

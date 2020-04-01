@@ -22,5 +22,23 @@ public class PlayerController : MonoBehaviour
 
         transform.position = new Vector3(newXPos, transform.position.y, -5);
     }
+    void OnCollisonEnter (Collision hit){
+
+        Vector3 viewPos = transform.position;
+
+        if(hit.gameObject.name == "LeftBounds"){
+
+            float speedInXDirection = 0f;
+
+            if(viewPos.x < 0f)
+            {
+                viewPos.x = 0;
+            }
+            
+            transform.position = viewPos;
+
+        }
+        
+    }
     
 }

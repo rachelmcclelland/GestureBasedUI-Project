@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3797957934326840312}
   - component: {fileID: -5440499900302994793}
   - component: {fileID: -1931850470259995035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spaceman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  GO: {fileID: 8993637200034286261}
