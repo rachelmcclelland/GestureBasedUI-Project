@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - LeftSide
+  - ShowOnPause
   layers:
   - Default
   - TransparentFX
