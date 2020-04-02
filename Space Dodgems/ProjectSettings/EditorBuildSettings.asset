@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/__Scenes/Menu.unity
     guid: 3cd91e5d086f89a41a4309918c3b9597
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/2cda990e2423bbf4892e6590ba056729
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/99b11bc9bcd71864d9977686dba2e1f9
+    guid: 99b11bc9bcd71864d9977686dba2e1f9
   - enabled: 1
     path: Assets/__Scenes/SpaceDodgems.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 790599767c8364d48af7a74a080b39dd
   - enabled: 1
     path: Assets/__Scenes/SpaceDodgemsLevel2.unity
-    guid: 99b11bc9bcd71864d9977686dba2e1f9
+    guid: d6570bf8003914946b06d5982aab8048
   - enabled: 1
     path: Assets/__Scenes/GameOver.unity
     guid: c977d500cbaf0164881a563927134ebb
