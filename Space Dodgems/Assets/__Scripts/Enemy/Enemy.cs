@@ -12,8 +12,15 @@ public class Enemy : MonoBehaviour
 
     public static EnemyKilled EnemyKilledEvent;
 
-   void Start()
+    [SerializeField]
+    private AudioClip lostLifeClip;
+
+    private SoundController soundController;
+
+
+    void Start()
     {
+        soundController = SoundController.FindSoundController();
     }
 
     void Update()
@@ -33,11 +40,13 @@ public class Enemy : MonoBehaviour
         if (player)
         {
             GameController.health -= 1;
-           // Debug.Log("Here");
             PublishEnemyKilledEvent();
-            //Time.timeScale = 0;
-            //SceneManager.LoadScene("GameOver"); // load game over page
-            
+
+            if (soundController)
+            {
+                soundController.PlayOneShot(lostLifeClip);
+            }
+
         }   
 
     }
