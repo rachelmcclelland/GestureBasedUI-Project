@@ -31,11 +31,11 @@ public class PointSpawner2 : MonoBehaviour
         // set the delay of the enemy depending on which level the player is on
         if (sceneName == "SpaceDodgems")
         {
-            spawnDelay = 30.0f;
+            spawnDelay = 10.0f;
         }
         else if (sceneName == "SpaceDodgemsLevel2")
         {
-            spawnDelay = 20.0f;
+            spawnDelay = 5.0f;
         }
 
         // get the enemey parent object

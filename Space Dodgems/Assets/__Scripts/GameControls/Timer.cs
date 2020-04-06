@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
 
         if (sceneName == "SpaceDodgems")
         {
-            if ((int)timer == 90)
+            if ((int)timer == 20)
             {
                 SceneManager.LoadScene("SpaceDodgemsLevel2");
             }
