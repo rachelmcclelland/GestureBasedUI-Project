@@ -25,19 +25,20 @@ public class BodySourceView : MonoBehaviour
         }
         
         List<ulong> trackedIds = new List<ulong>();
+
         foreach(var body in data)
         {
             if (body == null)
             {
                 continue;
-              }
-                
+            }
+
             if(body.IsTracked)
             {
                 trackedIds.Add (body.TrackingId);
             }
         }
-        
+
         List<ulong> knownIds = new List<ulong>(mBodies.Keys);
         
         // First delete untracked bodies
