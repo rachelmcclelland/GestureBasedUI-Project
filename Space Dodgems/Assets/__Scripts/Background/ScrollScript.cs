@@ -15,6 +15,7 @@ public class ScrollScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // scrolling background. repeat the background by a certain speed
         float newPos = Mathf.Repeat(Time.time * scrollSpeed, 20);
         transform.position = startPos + Vector2.down * newPos;
     }

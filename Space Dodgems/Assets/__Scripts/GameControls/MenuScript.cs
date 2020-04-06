@@ -20,6 +20,7 @@ public class MenuScript : MonoBehaviour
         pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
         hidePaused();
 
+        // what the user can say to control the game
         actions.Add("play", pauseControl);
         actions.Add("resume", pauseControl);
         actions.Add("reload", Reload);
@@ -42,6 +43,7 @@ public class MenuScript : MonoBehaviour
 
     void Update()
     {
+        // if the game is paused, show the paused menu 
         if (Time.timeScale == 0)
         {
             showPaused();
@@ -49,6 +51,7 @@ public class MenuScript : MonoBehaviour
         
     }
 
+    // reload the current scene back to the start
     public void Reload()
     {
         Application.LoadLevel(Application.loadedLevel);
@@ -94,6 +97,7 @@ public class MenuScript : MonoBehaviour
 
     }
 
+    // load the main menu level
     private void LoadMain()
     {
         Application.LoadLevel("Menu");

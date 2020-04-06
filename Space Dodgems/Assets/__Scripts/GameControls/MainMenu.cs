@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // what the user can say to control the game
         actions.Add("start", PlayGame);
         actions.Add("play game", PlayGame);
         actions.Add("play", PlayGame);

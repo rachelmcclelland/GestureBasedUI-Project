@@ -55,7 +55,6 @@ public class GameController : MonoBehaviour
         {
             // load game over screen when all lives are lost
             SceneManager.LoadScene("GameOver");
-            //Time.timeScale = 0;
         }
 
     }
