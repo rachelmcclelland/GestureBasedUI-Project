@@ -8,7 +8,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    // used for speech recognition
     private KeywordRecognizer keywordRecognizer;
+
+    // contains the string the speech can say and the function that 
+    // will be called when a certain word is said
     private Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
     // Start is called before the first frame update
@@ -22,7 +26,9 @@ public class MainMenu : MonoBehaviour
         actions.Add("leave", QuitGame);
         actions.Add("end game", QuitGame);
 
+        // set the KeywordRecognizer
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
+        // called when a phrase in the dictionary is recognised
         keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
 
         //starts listening
@@ -32,7 +38,10 @@ public class MainMenu : MonoBehaviour
 
     private void RecognizedSpeech(PhraseRecognizedEventArgs speech)
     {
-        Debug.Log(speech.text);
+        //Debug.Log(speech.text);
+
+        // invoke a method depending on what is said
+        // speech.text = string that is recognised
         actions[speech.text].Invoke();
     }
 
@@ -43,7 +52,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame ()
     {
-        Debug.Log("QUIT!");
+        //Debug.Log("QUIT!");
         Application.Quit();
     }
 }

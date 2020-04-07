@@ -10,7 +10,11 @@ public class MenuScript : MonoBehaviour
 {
     GameObject[] pauseObjects;
 
+    // used for speech recognition
     private KeywordRecognizer keywordRecognizer;
+
+    // contains the string the speech can say and the function that 
+    // will be called when a certain word is said
     private Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
     // Start is called before the first frame update
@@ -27,7 +31,9 @@ public class MenuScript : MonoBehaviour
         actions.Add("restart", Reload);
         actions.Add("main menu", LoadMain);
 
+        // set the KeywordRecognizer
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
+        // called when a phrase in the dictionary is recognised
         keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
 
         //starts listening
@@ -37,7 +43,10 @@ public class MenuScript : MonoBehaviour
 
     private void RecognizedSpeech(PhraseRecognizedEventArgs speech)
     {
-        Debug.Log(speech.text);
+        // Debug.Log(speech.text);
+
+        // invoke a method depending on what is said
+        // speech.text = string that is recognised
         actions[speech.text].Invoke();
     }
 
